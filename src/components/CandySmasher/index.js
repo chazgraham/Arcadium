@@ -19,12 +19,23 @@ function CandySmasher() {
         createBoard();
     }, [])
 
+    const checkForCollumOfThree = () => {
+        // loops through each square until last collum of 3, which happens to end at index of 47
+        for (let i = 0; i < 47 ; i++) {
+            // i is the first candy in the collum, i + width is the candy right under it, and i + width is the candy under candy i + width
+            const collumOfTree = [i, i + width, i + width * 2]
+            const selectedColor = currentColorArr[i]
+            console.log(collumOfTree)
+            console.log(selectedColor)
+        }
+    }
+    checkForCollumOfThree()
     return (
         <>
             <section className="container">
                 <div className="gameBoard">
                     {currentColorArr.map((candy, index) => (
-                        <img key={index} style={{backgroundColor: candy}} alt=""/>
+                        <img key={index} style={{backgroundColor: candy}} alt={candy}/>
                     ))}
                 </div>
             </section>
