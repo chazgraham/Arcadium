@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./index.css"
 
 function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
@@ -23,7 +24,7 @@ function CandySmasher() {
             <section className="container">
                 <div className="gameBoard">
                     {currentColorArr.map((candy, index) => (
-                        <img key={index} style={{backgroundColor: candy}} alt="candySpace"/>
+                        <img key={index} style={{backgroundColor: candy}} alt=""/>
                     ))}
                 </div>
             </section>

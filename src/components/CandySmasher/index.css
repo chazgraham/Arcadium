@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+}
+
+.gameBoard {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gameBoard img {
+    width: 75px;
+    height: 75px;
+}
