@@ -24,12 +24,24 @@ function CandySmasher() {
         for (let i = 0; i < 47 ; i++) {
             // i is the first candy in the collum, i + width is the candy right under it, and i + width is the candy under candy i + width
             const collumOfTree = [i, i + width, i + width * 2]
+            // the color that all the candies should be in the collum of three
             const selectedColor = currentColorArr[i]
-            console.log(collumOfTree)
-            console.log(selectedColor)
+            
+            //if all the candies are the same color as the selected color then they will be replaced with a empty string
+            if ( collumOfTree.every(candy => currentColorArr[candy] === selectedColor)) {
+                collumOfTree.forEach(candy => currentColorArr[candy] = '')
+            }
         }
     }
-    checkForCollumOfThree()
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            checkForCollumOfThree()
+            setCurrentColorArr([...currentColorArr])
+        }, 100);
+        return () => clearInterval(timer)
+    })
+
     return (
         <>
             <section className="container">
