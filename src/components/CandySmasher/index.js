@@ -4,23 +4,29 @@ function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
 
     const width = 8;
-    const candyColor = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
+    const candyColorArr = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
     
     useEffect(() => {
         const createBoard = () => {
             const randomColorArr = [];
             for (let i = 0; i < width * width; i++) {
-                const randomColor = candyColor[Math.floor(Math.random() * candyColor.length)]
+                const randomColor = candyColorArr[Math.floor(Math.random() * candyColorArr.length)]
                 randomColorArr.push(randomColor) 
             }
             setCurrentColorArr(randomColorArr)
-            console.log(randomColorArr)
         }
         createBoard();
     }, [])
 
     return (
         <>
+            <section className="container">
+                <div className="gameBoard">
+                    {currentColorArr.map((candy, index) => (
+                        <img key={index} style={{backgroundColor: candy}} alt="candySpace"/>
+                    ))}
+                </div>
+            </section>
         </>
     )
 
