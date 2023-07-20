@@ -98,14 +98,12 @@ function CandySmasher() {
         console.log(e.target)
         console.log('drag start')
         setCandybeingDragged(e.target);
-        console.log(candyBeingdraged)
     }
 
     const dragDrop = (e) => {
         console.log(e.target)
         console.log('drag drop')
         setCandybeingReplaced(e.target);
-        console.log(candyBeingReplaced)
     }
 
     const dragEnd = (e) => {
