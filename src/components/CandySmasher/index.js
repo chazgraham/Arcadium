@@ -5,9 +5,9 @@ function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
 
     const width = 8;
+    const candyColorArr = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
     
     useEffect(() => {
-        const candyColorArr = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
         const createBoard = () => {
             const randomColorArr = [];
             for (let i = 0; i < width * width; i++) {
@@ -76,26 +76,33 @@ function CandySmasher() {
     }
 
     const shiftCandiesDown = () => {
-        for (var i = 0; i < 64; i++) {
-            // if the space below the candy is an empty string then swap the two vaules
+        for (var i = 0; i < 64 - width; i++) {
+            const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
+            const isFirstRow = firstRow.includes(i);
+
+            if (isFirstRow && currentColorArr[i] === '') {
+                const randomColor = candyColorArr[Math.floor(Math.random() * candyColorArr.length)]
+                currentColorArr[i] = randomColor
+            }
+
             if (currentColorArr[i + width] === '') {
-                currentColorArr[i + width] = currentColorArr[i]
-                currentColorArr[i] = ''
+                currentColorArr[i + width] = currentColorArr[i];
+                currentColorArr[i] = '';
             }
         }
     }
-    
+
     useEffect(() => {
         const timer = setInterval(() => {
-            checkForCollumOfFour()
-            checkForCollumOfThree()
-            checkForRowOfFour()
-            checkForRowOfTree()
-            shiftCandiesDown()
+            checkForCollumOfFour();
+            checkForCollumOfThree();
+            checkForRowOfFour();
+            checkForRowOfTree();
+            shiftCandiesDown();
             setCurrentColorArr([...currentColorArr])
         }, 100);
-        return () => clearInterval(timer)
-    })
+        return () => clearInterval(timer);
+    });
 
     return (
         <>
