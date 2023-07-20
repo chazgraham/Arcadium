@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
+import red from "../../assets/images/candyImages/red.png";
+import blue from "../../assets/images/candyImages/blue.png";
+import green from "../../assets/images/candyImages/green.png";
+import yellow from "../../assets/images/candyImages/yellow.png";
+import orange from "../../assets/images/candyImages/orange.png";
+import purple from "../../assets/images/candyImages/purple.png";
+import blank from "../../assets/images/candyImages/blank.png";
 
 function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
@@ -7,7 +14,7 @@ function CandySmasher() {
     const [candyBeingReplaced, setCandybeingReplaced] = useState(null);
 
     const width = 8;
-    const candyColorArr = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
+    const candyColorArr = [red, blue, green, yellow, orange, purple];
     
     useEffect(() => {
         const createBoard = () => {
@@ -31,7 +38,7 @@ function CandySmasher() {
             
             //if all the candies are the same color as the selected color then they will be replaced with a empty string
             if ( collumOfTree.every(candy => currentColorArr[candy] === selectedColor)) {
-                collumOfTree.forEach(candy => currentColorArr[candy] = '')
+                collumOfTree.forEach(candy => currentColorArr[candy] = blank)
                 return true;
             };
         }
@@ -45,7 +52,7 @@ function CandySmasher() {
             const selectedColor = currentColorArr[i];
             
             if ( collumOfFour.every(candy => currentColorArr[candy] === selectedColor)) {
-                collumOfFour.forEach(candy => currentColorArr[candy] = '');
+                collumOfFour.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
         }
@@ -64,7 +71,7 @@ function CandySmasher() {
             
             // all 3 candies are the same then replace them empty img
             if ( rowOfThree.every(candy => currentColorArr[candy] === selectedColor)) {
-                rowOfThree.forEach(candy => currentColorArr[candy] = '');
+                rowOfThree.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
         }
@@ -79,7 +86,7 @@ function CandySmasher() {
             if (notValid.includes(i)) continue;
             
             if ( rowOfFour.every(candy => currentColorArr[candy] === selectedColor)) {
-                rowOfFour.forEach(candy => currentColorArr[candy] = '');
+                rowOfFour.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
         }
@@ -90,14 +97,14 @@ function CandySmasher() {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
             const isFirstRow = firstRow.includes(i);
 
-            if (isFirstRow && currentColorArr[i] === '') {
+            if (isFirstRow && currentColorArr[i] === blank) {
                 const randomColor = candyColorArr[Math.floor(Math.random() * candyColorArr.length)];
                 currentColorArr[i] = randomColor;
             }
 
-            if (currentColorArr[i + width] === '') {
+            if (currentColorArr[i + width] === blank) {
                 currentColorArr[i + width] = currentColorArr[i];
-                currentColorArr[i] = '';
+                currentColorArr[i] = blank;
             }
         }
     }
@@ -114,6 +121,9 @@ function CandySmasher() {
         const candyBeingDraggedId = parseInt(candyBeingDragged.getAttribute('data-id'));
         const candyBeingReplacedId = parseInt(candyBeingReplaced.getAttribute('data-id'));
 
+        currentColorArr[candyBeingReplacedId] = candyBeingDragged.getAttribute('src');
+        currentColorArr[candyBeingDraggedId] = candyBeingReplaced.getAttribute('src');
+
         const validmoves = [
             candyBeingDraggedId - 1,
             candyBeingDraggedId - width,
@@ -128,15 +138,12 @@ function CandySmasher() {
         const isCollumOfThree = checkForCollumOfThree();
         const isRowOfThree = checkForRowOfThree()
 
-        if (validmove) {
-            currentColorArr[candyBeingReplacedId] = candyBeingDragged.style.backgroundColor;
-            currentColorArr[candyBeingDraggedId] = candyBeingReplaced.style.backgroundColor;
-        } else if (candyBeingReplacedId && validmove && (isCollumOffour || isRowOfFour || isCollumOfThree || isRowOfThree)) {
+        if (candyBeingReplacedId && validmove && (isCollumOffour || isRowOfFour || isCollumOfThree || isRowOfThree)) {
             setCandybeingDragged(null);
             setCandybeingReplaced(null);
         } else {
-            currentColorArr[candyBeingReplacedId] = candyBeingReplaced.style.backgroundColor
-            currentColorArr[candyBeingDraggedId] = candyBeingDragged.style.backgroundColor
+            currentColorArr[candyBeingReplacedId] = candyBeingReplaced.getAttribute('src');
+            currentColorArr[candyBeingDraggedId] = candyBeingDragged.getAttribute('src');
             setCurrentColorArr([...currentColorArr])
         }
     }
@@ -160,7 +167,7 @@ function CandySmasher() {
                     {currentColorArr.map((candy, index) => (
                         <img 
                             key={index} 
-                            style={{backgroundColor: candy}} 
+                            src={candy} 
                             alt={candy}
                             data-id={index}
                             draggable={true}
