@@ -123,17 +123,15 @@ function CandySmasher() {
 
         const validmove = validmoves.includes(candyBeingReplacedId);
 
-        if (validmove) {
-            currentColorArr[candyBeingReplacedId] = candyBeingDragged.style.backgroundColor;
-            currentColorArr[candyBeingDraggedId] = candyBeingReplaced.style.backgroundColor;
-        }
-
         const isCollumOffour = checkForCollumOfFour();
         const isRowOfFour = checkForRowOfFour();
         const isCollumOfThree = checkForCollumOfThree();
         const isRowOfThree = checkForRowOfThree()
 
-        if (candyBeingReplacedId && validmove && (isCollumOffour || isRowOfFour || isCollumOfThree || isRowOfThree)) {
+        if (validmove) {
+            currentColorArr[candyBeingReplacedId] = candyBeingDragged.style.backgroundColor;
+            currentColorArr[candyBeingDraggedId] = candyBeingReplaced.style.backgroundColor;
+        } else if (candyBeingReplacedId && validmove && (isCollumOffour || isRowOfFour || isCollumOfThree || isRowOfThree)) {
             setCandybeingDragged(null);
             setCandybeingReplaced(null);
         } else {
