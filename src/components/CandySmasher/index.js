@@ -121,9 +121,6 @@ function CandySmasher() {
         const candyBeingDraggedId = parseInt(candyBeingDragged.getAttribute('data-id'));
         const candyBeingReplacedId = parseInt(candyBeingReplaced.getAttribute('data-id'));
 
-        currentColorArr[candyBeingReplacedId] = candyBeingDragged.getAttribute('src');
-        currentColorArr[candyBeingDraggedId] = candyBeingReplaced.getAttribute('src');
-
         const validmoves = [
             candyBeingDraggedId - 1,
             candyBeingDraggedId - width,
@@ -132,6 +129,11 @@ function CandySmasher() {
         ];
 
         const validmove = validmoves.includes(candyBeingReplacedId);
+
+        if (validmove) {
+            currentColorArr[candyBeingReplacedId] = candyBeingDragged.getAttribute('src');
+            currentColorArr[candyBeingDraggedId] = candyBeingReplaced.getAttribute('src');
+        }
 
         const isCollumOffour = checkForCollumOfFour();
         const isRowOfFour = checkForRowOfFour();
