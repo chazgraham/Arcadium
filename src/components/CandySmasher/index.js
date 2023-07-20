@@ -3,7 +3,7 @@ import "./index.css"
 
 function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
-    const [candyBeingdraged, setCandybeingDragged] = useState(null);
+    const [candyBeingDragged, setCandybeingDragged] = useState(null);
     const [candyBeingReplaced, setCandybeingReplaced] = useState(null);
 
     const width = 8;
@@ -107,8 +107,12 @@ function CandySmasher() {
     }
 
     const dragEnd = (e) => {
-        console.log(e.target)
         console.log('drag end')
+        const candyBeingDraggedId = parseInt(candyBeingDragged.getAttribute('data-id'))
+        const candyBeingReplacedId = parseInt(candyBeingReplaced.getAttribute('data-id'))
+
+        currentColorArr[candyBeingReplacedId] = candyBeingDragged.style.backgroundColor
+        currentColorArr[candyBeingDraggedId] = candyBeingReplaced.style.backgroundColor
     }
 
     useEffect(() => {
