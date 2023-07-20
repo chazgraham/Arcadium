@@ -3,6 +3,8 @@ import "./index.css"
 
 function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
+    const [candyBeingdraged, setCandybeingDragged] = useState(null);
+    const [candyBeingReplaced, setCandybeingReplaced] = useState(null);
 
     const width = 8;
     const candyColorArr = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
@@ -76,7 +78,7 @@ function CandySmasher() {
     }
 
     const shiftCandiesDown = () => {
-        for (var i = 0; i < 55; i++) {
+        for (var i = 0; i <= 55; i++) {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
             const isFirstRow = firstRow.includes(i);
 
@@ -95,11 +97,15 @@ function CandySmasher() {
     const dragStart = (e) => {
         console.log(e.target)
         console.log('drag start')
+        setCandybeingDragged(e.target);
+        console.log(candyBeingdraged)
     }
 
     const dragDrop = (e) => {
         console.log(e.target)
         console.log('drag drop')
+        setCandybeingReplaced(e.target);
+        console.log(candyBeingReplaced)
     }
 
     const dragEnd = (e) => {
