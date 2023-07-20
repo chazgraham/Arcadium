@@ -21,7 +21,7 @@ function CandySmasher() {
 
     const checkForCollumOfThree = () => {
         // loops through each square until last collum of 3, which happens to end at index of 47
-        for (let i = 0; i < 47 ; i++) {
+        for (let i = 0; i <= 47 ; i++) {
             // i is the first candy in the collum, i + width is the candy right under it, and i + width * 2 is the candy under candy i + width
             const collumOfTree = [i, i + width, i + width * 2]
             // the color that all the candies should be in the collum of three
@@ -36,7 +36,7 @@ function CandySmasher() {
 
     const checkForCollumOfFour = () => {
         // loops through each square until last collum of 4, which happens to end at index of 39
-        for (let i = 0; i < 39 ; i++) {
+        for (let i = 0; i <= 39 ; i++) {
             // i is the first candy in the collum, i + width is the candy right under it, and i + width * 2 is the candy under candy i + width, i + width * 3 is under i + width * 2 
             const collumOfFour = [i, i + width, i + width * 2, i + width * 3]
             const selectedColor = currentColorArr[i]
@@ -47,7 +47,7 @@ function CandySmasher() {
         }
     }
 
-    const checkForRowOfTree = () => {
+    const checkForRowOfThree = () => {
         for (let i = 0; i < 64 ; i++) {
             const rowOfThree = [i, i + 1, i + 2]
             const selectedColor = currentColorArr[i]
@@ -76,7 +76,7 @@ function CandySmasher() {
     }
 
     const shiftCandiesDown = () => {
-        for (var i = 0; i < 64 - width; i++) {
+        for (var i = 0; i < 55; i++) {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
             const isFirstRow = firstRow.includes(i);
 
@@ -92,12 +92,24 @@ function CandySmasher() {
         }
     }
 
+    const dragStart = () => {
+        console.log('drag start')
+    }
+
+    const dragDrop = () => {
+        console.log('drag drop')
+    }
+
+    const dragEnd = () => {
+        console.log('drag end')
+    }
+
     useEffect(() => {
         const timer = setInterval(() => {
             checkForCollumOfFour();
             checkForCollumOfThree();
             checkForRowOfFour();
-            checkForRowOfTree();
+            checkForRowOfThree();
             shiftCandiesDown();
             setCurrentColorArr([...currentColorArr])
         }, 100);
@@ -109,7 +121,19 @@ function CandySmasher() {
             <section className="container">
                 <div className="gameBoard">
                     {currentColorArr.map((candy, index) => (
-                        <img key={index} style={{backgroundColor: candy}} alt={candy}/>
+                        <img 
+                            key={index} 
+                            style={{backgroundColor: candy}} 
+                            alt={candy}
+                            data-id={index}
+                            draggable={true}
+                            onDragStart={dragStart}
+                            onDragOver={(e) => e.preventDefault()}
+                            onDragEnter={(e) => e.preventDefault()}
+                            onDragLeave={(e) => e.preventDefault()}
+                            onDrop={dragDrop}
+                            onDragEnd={dragEnd}
+                        />
                     ))}
                 </div>
             </section>
