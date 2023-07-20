@@ -144,12 +144,12 @@ function CandySmasher() {
     useEffect(() => {
         const timer = setInterval(() => {
             checkForCollumOfFour();
-            checkForCollumOfThree();
             checkForRowOfFour();
+            checkForCollumOfThree();
             checkForRowOfThree();
             shiftCandiesDown();
             setCurrentColorArr([...currentColorArr])
-        }, 150);
+        }, 170);
         return () => clearInterval(timer);
     });
 
