@@ -74,6 +74,16 @@ function CandySmasher() {
             }
         }
     }
+
+    const shiftCandiesDown = () => {
+        for (var i = 0; i < 64; i++) {
+            // if the space below the candy is an empty string then swap the two vaules
+            if (currentColorArr[i + width] === '') {
+                currentColorArr[i + width] = currentColorArr[i]
+                currentColorArr[i] = ''
+            }
+        }
+    }
     
     useEffect(() => {
         const timer = setInterval(() => {
@@ -81,6 +91,7 @@ function CandySmasher() {
             checkForCollumOfThree()
             checkForRowOfFour()
             checkForRowOfTree()
+            shiftCandiesDown()
             setCurrentColorArr([...currentColorArr])
         }, 100);
         return () => clearInterval(timer)
