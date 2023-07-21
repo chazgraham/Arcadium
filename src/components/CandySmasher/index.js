@@ -12,6 +12,7 @@ function CandySmasher() {
     const [currentColorArr, setCurrentColorArr] = useState([]);
     const [candyBeingDragged, setCandybeingDragged] = useState(null);
     const [candyBeingReplaced, setCandybeingReplaced] = useState(null);
+    const [score, setScore] = useState(0)
 
     const width = 8;
     const candyColorArr = [red, blue, green, yellow, orange, purple];
@@ -35,14 +36,17 @@ function CandySmasher() {
             const collumOfTree = [i, i + width, i + width * 2];
             // the color that all the candies should be in the collum of three
             const selectedColor = currentColorArr[i];
+            const isBlank = currentColorArr[i] === blank
             
             //if all the candies are the same color as the selected color then they will be replaced with a empty string
-            if ( collumOfTree.every(candy => currentColorArr[candy] === selectedColor)) {
+            if ( collumOfTree.every(candy => currentColorArr[candy] === selectedColor && !isBlank)) {
+                setScore((score) => score + 3)
                 collumOfTree.forEach(candy => currentColorArr[candy] = blank)
                 return true;
             };
         }
     }
+    console.log(score)
 
     const checkForCollumOfFour = () => {
         // loops through each square until last collum of 4, which happens to end at index of 39
