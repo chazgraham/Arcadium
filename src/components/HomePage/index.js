@@ -9,8 +9,12 @@ function HomePage() {
                 <h1 className="choose_game">
                     Choose Your Game!!!
                 </h1>
-                <div>
-                    <Link to="/candySmasher"><button>cnasy smasher button test</button></Link>
+                <div className="game_thumbnails">
+                    <div className="thumdnail_card">
+                        <Link to="/candySmasher">
+                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/candySmasher.png`)} alt="candySmasher"/>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </>

@@ -2,7 +2,22 @@
     text-align: center;
 }
 
-.choose_game{
+.choose_game {
     margin: 0;
     padding-top: 30px;
+}
+
+.game_thumbnails {
+    padding-top: 30px;
+}
+
+.img_thumbnail {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 25%;
+}
+
+.img_thumbnail:hover {
+    transform: scale(1.2);
 }
