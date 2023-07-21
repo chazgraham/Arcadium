@@ -3,15 +3,15 @@ header {
     padding: 20px;
     background-image: url('../../assets/images/backroundImgs/headerBackground.jpg');
     background-size: cover;
+    border-radius: 25px 25px 25px 25px;
+    box-shadow:  0px 0px 10px #d8d7e9;
 }
 
 .title {
-    margin-left: 35%;
-    margin-right: 35%;
     display: block;
     position: relative;
     font-size: 40px;
-    background: linear-gradient(to bottom,  #d8d7e9 0%,#ac4ab6 50%, #531a54 51%,#404177 100%);
+    background: linear-gradient(to bottom,  #404177 0%,#531a54 50%, #ac4ab6 51%,#d8d7e9 100%);
     background-blend-mode: multiply;
     background-size: 100%;
     background-repeat: repeat;
@@ -21,11 +21,7 @@ header {
 }
 
 .title:hover {
-    transform: scale(1.5);
-    background: linear-gradient(to bottom,  #404177 0%,#531a54 50%, #ac4ab6 51%,#d8d7e9 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow:  0px 0px 20px #d8d7e9;
 }
 
 a {
