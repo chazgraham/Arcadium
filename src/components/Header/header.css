@@ -1,5 +1,6 @@
 header {
     text-align: center;
+    margin-top: 20px;
     padding: 20px;
     background-image: url('../../assets/images/backroundImgs/headerBackground.jpg');
     background-size: cover;
@@ -27,4 +28,11 @@ header {
 
 a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 580px) {
+    header{
+        margin-top: 40px;
+        padding: 1px;
+    }
 }
