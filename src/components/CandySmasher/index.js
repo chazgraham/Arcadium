@@ -46,7 +46,6 @@ function CandySmasher() {
             };
         }
     }
-    console.log(score)
 
     const checkForCollumOfFour = () => {
         // loops through each square until last collum of 4, which happens to end at index of 39
@@ -54,8 +53,10 @@ function CandySmasher() {
             // i is the first candy in the collum, i + width is the candy right under it, and i + width * 2 is the candy under candy i + width, i + width * 3 is under i + width * 2 
             const collumOfFour = [i, i + width, i + width * 2, i + width * 3];
             const selectedColor = currentColorArr[i];
+            const isBlank = currentColorArr[i] === blank
             
-            if ( collumOfFour.every(candy => currentColorArr[candy] === selectedColor)) {
+            if ( collumOfFour.every(candy => currentColorArr[candy] === selectedColor && !isBlank)) {
+                setScore((score) => score + 4)
                 collumOfFour.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
@@ -69,12 +70,14 @@ function CandySmasher() {
             const selectedColor = currentColorArr[i];
             // last two candies in the collum not valid so you can have wrapping rows
             const notValid =  [6, 7, 14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 54, 55, 63, 64];
+            const isBlank = currentColorArr[i] === blank
 
             //skips the notValid numbers when looping through the array
             if (notValid.includes(i)) continue;
             
             // all 3 candies are the same then replace them empty img
-            if ( rowOfThree.every(candy => currentColorArr[candy] === selectedColor)) {
+            if ( rowOfThree.every(candy => currentColorArr[candy] === selectedColor && !isBlank)) {
+                setScore((score) => score + 3)
                 rowOfThree.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
@@ -86,10 +89,12 @@ function CandySmasher() {
             const rowOfFour = [i, i + 1, i + 2, i + 3];
             const selectedColor = currentColorArr[i];
             const notValid =  [5, 6, 7, 13,14, 15, 21,22, 23, 29, 30, 31, 37, 38, 39, 45, 46, 47, 53, 54, 55, 62, 63, 64];
+            const isBlank = currentColorArr[i] === blank
 
             if (notValid.includes(i)) continue;
             
-            if ( rowOfFour.every(candy => currentColorArr[candy] === selectedColor)) {
+            if ( rowOfFour.every(candy => currentColorArr[candy] === selectedColor &&!isBlank)) {
+                setScore((score) => score + 4)
                 rowOfFour.forEach(candy => currentColorArr[candy] = blank);
                 return true;
             }
@@ -166,6 +171,7 @@ function CandySmasher() {
         return () => clearInterval(timer);
     });
 
+    const refresh = () => window.location.reload(true)
     return (
         <>
             <section className="container">
@@ -186,6 +192,10 @@ function CandySmasher() {
                         />
                     ))}
                 </div>
+            </section>
+            <section className="score_section">
+                <p className="score">Current Score: {score}</p>
+                <button onClick={refresh}>Reset Game</button>
             </section>
         </>
     )
