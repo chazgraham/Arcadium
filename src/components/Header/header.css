@@ -20,6 +20,7 @@ header {
     line-height: 1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #9f9f9f;
 }
 
 .title:hover {
