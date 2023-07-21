@@ -6,7 +6,7 @@ function Header() {
     return (
         <>
             <header>
-                <Link to="/arcadium"><h1 className="title">Arcadium</h1></Link>
+                <Link to="/"><h1 className="title">Arcadium</h1></Link>
             </header>
         </>
     )

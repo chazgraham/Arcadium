@@ -8,11 +8,11 @@ import Header from "../src/components/Header";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/">
         < Header />
         <Routes>
           <Route
-          path="/arcadium"
+          path="/"
           element={<HomePage />}
           />
           <Route
