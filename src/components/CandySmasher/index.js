@@ -195,7 +195,7 @@ function CandySmasher() {
             </section>
             <section className="score_section">
                 <p className="score">Current Score: {score}</p>
-                <button onClick={refresh}>Reset Game</button>
+                <button className="reset_btn" onClick={refresh}>Reset Game</button>
             </section>
         </>
     )

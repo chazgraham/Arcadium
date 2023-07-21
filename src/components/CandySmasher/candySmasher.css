@@ -26,3 +26,18 @@
     text-align: center;
     padding-right: 20px;
 }
+
+.reset_btn {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 15px 15px 15px 15px;
+    background: linear-gradient(to bottom,  #404177 15%,#531a54 30%, #ac4ab6 51%,#d8d7e9 100%);
+    text-shadow: 0px 5px 10px #d8d7e9;
+}
+
+.reset_btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #d8d7e9;
+}

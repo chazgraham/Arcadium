@@ -8,6 +8,7 @@ header {
 }
 
 .title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
     position: relative;
     font-size: 40px;
