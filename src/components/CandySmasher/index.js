@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
+import "./candySmasher.css";
 import red from "../../assets/images/candyImages/red.png";
 import blue from "../../assets/images/candyImages/blue.png";
 import green from "../../assets/images/candyImages/green.png";
