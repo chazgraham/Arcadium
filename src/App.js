@@ -1,11 +1,26 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 
-import CandySmasher from "./components/CandySmasher";
+import HomePage from "./components/HomePage";
+import CandySmasher from "../src/components/CandySmasher";
+import Header from "../src/components/Header";
 
 function App() {
   return (
     <>
-    <CandySmasher />
+      <Router>
+        < Header />
+        <Routes>
+          <Route
+          path="/arcadium"
+          element={<HomePage />}
+          />
+          <Route
+            path="/candySmasher"
+            element={<CandySmasher />}
+          />
+        </Routes>
+      </Router>
     </>
   );
 }
