@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./index.css";
 
 function Header() {
     return (
         <>
             <header>
-                <Link to="/arcadium"><h1>Arcadium</h1></Link>
+                <Link to="/arcadium"><h1 className="title">Arcadium</h1></Link>
             </header>
         </>
     )
