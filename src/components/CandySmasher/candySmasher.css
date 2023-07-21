@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    padding: 30px;
+    padding: 20px;
     justify-content: space-around;
 }
 
@@ -24,7 +24,13 @@
 
 .score {
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
     padding-right: 20px;
+    background: linear-gradient(to left,  #f80000 0%,#f98d00 50%, #ffb301 51%,#edda00 100%);
+    line-height: 1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .reset_btn {
