@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/arcadium/static/css/main.8103c03b.css",
+    "main.js": "/arcadium/static/js/main.638f861c.js",
+    "static/media/comingSoon.png": "/arcadium/static/media/comingSoon.71930f6e84e5c4739833.png",
+    "static/media/bodybackground.jpg": "/arcadium/static/media/bodybackground.8be6a92bb9ddbff83c45.jpg",
+    "static/media/candySmasher.png": "/arcadium/static/media/candySmasher.6413757dcae161806379.png",
+    "static/media/headerBackground.jpg": "/arcadium/static/media/headerBackground.93075118022b5b17b878.jpg",
+    "static/media/blue.png": "/arcadium/static/media/blue.a83ecb789626082f6e57.png",
+    "static/media/purple.png": "/arcadium/static/media/purple.e396877d69a1af049b18.png",
+    "static/media/red.png": "/arcadium/static/media/red.9089fee176d59ea9f718.png",
+    "static/media/green.png": "/arcadium/static/media/green.913ee43a7094d588bdd7.png",
+    "static/media/blank.png": "/arcadium/static/media/blank.5b92bbe13bf1d81f61a1.png",
+    "static/media/yellow.png": "/arcadium/static/media/yellow.202c305e8fed14cf603e.png",
+    "static/media/orange.png": "/arcadium/static/media/orange.e66bce180512893fc473.png",
+    "index.html": "/arcadium/index.html",
+    "main.8103c03b.css.map": "/arcadium/static/css/main.8103c03b.css.map",
+    "main.638f861c.js.map": "/arcadium/static/js/main.638f861c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8103c03b.css",
+    "static/js/main.638f861c.js"
+  ]
+}
