@@ -15,6 +15,11 @@ function HomePage() {
                             <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/candySmasher.png`)} alt="candySmasher"/>
                         </Link>
                     </div>
+                    <div className="thumdnail_card">
+                        <Link to="/arcadium">
+                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/comingSoon.png`)} alt="candySmasher"/>
+                        </Link>
+                    </div>
                 </div>
             </section>
         </>

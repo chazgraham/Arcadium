@@ -16,7 +16,10 @@
 }
 
 .game_thumbnails {
-    padding-top: 30px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .img_thumbnail {
@@ -24,6 +27,7 @@
     height: 200px;
     background-color: rgba(0, 0, 0, .4);
     border-radius: 25%;
+    margin: 15px;
 }
 
 .img_thumbnail:hover {
