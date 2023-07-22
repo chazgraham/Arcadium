@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./ticTacToe.css";
+import { parsePath } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 function TicTacToe () {
     const [currentPiece, setCurrentPiece] = useState([]);
-    const [spotBeingTaken, setSpotBeingTaken] = useState(null)
+    const [yourMove, setYourMove] = useState(true)
     
     const width = 3;
     
@@ -19,14 +21,29 @@ function TicTacToe () {
     }, [])
 
     const selectSpot = (e) => {
-        const spotBeingTaken =(e.target);
-        
-        const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"))
-        currentPiece[spotBeingTakenId] = 'black'
-        setCurrentPiece([...currentPiece])
+        if (yourMove === true) {
+            const spotBeingTaken =(e.target);
+            const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"))
+            currentPiece[spotBeingTakenId] = 'black'
+            setCurrentPiece([...currentPiece])
+            setYourMove(false)
+        } 
+    }
+
+    const botMove = () => {
+        if (yourMove !== true) {
+            console.log('bot move')
+            setYourMove(true)
+        }
     }
     
-  
+    useEffect(() => {
+        const timer = setInterval(() => {
+            botMove()
+        }, 1000)
+        return () => clearInterval(timer)
+    })
+
 
     return (
         <>
