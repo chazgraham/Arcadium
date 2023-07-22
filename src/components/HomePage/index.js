@@ -16,7 +16,7 @@ function HomePage() {
                         </Link>
                     </div>
                     <div className="thumdnail_card">
-                        <Link to="/">
+                        <Link to="/ticTacToe">
                             <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/comingSoon.png`)} alt="candySmasher"/>
                         </Link>
                     </div>
