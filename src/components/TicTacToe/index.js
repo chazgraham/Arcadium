@@ -17,6 +17,10 @@ function TicTacToe () {
         createBoard()
     }, [])
 
+    const takeSpot = (e) => {
+        console.log(e.target);
+    }
+
     return (
         <>
             <section className="tac_container">
@@ -27,6 +31,7 @@ function TicTacToe () {
                             alt="moveSlot"
                             style={{backgroundColor: move}}
                             data-id={index}
+                            onClick={takeSpot}
                         />
                     ))}
                 </div>
