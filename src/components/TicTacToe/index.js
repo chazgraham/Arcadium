@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./ticTacToe.css";
 
 function TicTacToe () {
     const [currentPiece, setCurrentPiece] = useState([]);
@@ -22,8 +23,10 @@ function TicTacToe () {
                 <div className="tac_gameBoard">
                     {currentPiece.map((move, index) => (
                         <img
+                            key={index}
                             alt="moveSlot"
                             style={{backgroundColor: move}}
+                            data-id={index}
                         />
                     ))}
                 </div>

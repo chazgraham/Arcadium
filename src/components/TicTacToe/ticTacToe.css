@@ -1,0 +1,17 @@
+.tac_container {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.tac_gameBoard {
+    width: 513px;
+    height: 513px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tac_gameBoard img {
+    width: 171px;
+    height: 171px;
+}
