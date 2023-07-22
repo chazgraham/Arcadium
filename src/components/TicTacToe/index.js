@@ -3,8 +3,9 @@ import "./ticTacToe.css";
 
 function TicTacToe () {
     const [currentPiece, setCurrentPiece] = useState([]);
-    const width = 3;
+    const [spotBeingTaken, setSpotBeingTaken] = useState(null)
     
+    const width = 3;
     
     useEffect(() => {
         const createBoard = () => {
@@ -17,9 +18,15 @@ function TicTacToe () {
         createBoard()
     }, [])
 
-    const takeSpot = (e) => {
-        console.log(e.target);
+    const selectSpot = (e) => {
+        const spotBeingTaken =(e.target);
+        
+        const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"))
+        currentPiece[spotBeingTakenId] = 'black'
+        setCurrentPiece([...currentPiece])
     }
+    
+  
 
     return (
         <>
@@ -31,7 +38,7 @@ function TicTacToe () {
                             alt="moveSlot"
                             style={{backgroundColor: move}}
                             data-id={index}
-                            onClick={takeSpot}
+                            onClick={selectSpot}
                         />
                     ))}
                 </div>
