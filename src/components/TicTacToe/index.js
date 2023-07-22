@@ -31,8 +31,20 @@ function TicTacToe () {
     }
 
     const botMove = () => {
+        const validMoves = currentPiece.filter(function(color) {
+            return color === "white"
+        })
+        if (validMoves.length <= 0){
+            console.log('game over')
+        }
         if (yourMove !== true) {
             console.log('bot move')
+            console.log(validMoves)
+            
+            const getRandomPeice = validMoves[Math.floor(Math.random()*validMoves.length)]
+            console.log(getRandomPeice)
+           
+            
             setYourMove(true)
         }
     }
