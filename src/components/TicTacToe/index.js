@@ -5,6 +5,7 @@ function TicTacToe () {
     const [currentPiece, setCurrentPiece] = useState([]);
     const [yourMove, setYourMove] = useState(true);
     const [takenSpots, setTakenSpots] = useState([]);
+    const [gameDirections, setGameDirections] = useState('Place first move to start')
     
     const width = 3;
     
@@ -31,6 +32,7 @@ function TicTacToe () {
 
             setCurrentPiece([...currentPiece]);
             setYourMove(false);
+            setGameDirections('Circles Move')
         }
         setTakenSpots(takenSpot);
         checkWinner()
@@ -52,6 +54,7 @@ function TicTacToe () {
                 setCurrentPiece([...currentPiece]);
                 takenSpot.push(getRandomPeice);
                 setYourMove(true);
+                setGameDirections('Crosses Move')
             }
             setTakenSpots(takenSpot);
             checkWinner()
@@ -69,10 +72,10 @@ function TicTacToe () {
             const oWins = array.every(move => currentPiece[move].includes('O'))
 
             if (xWins) {
-                console.log('x wins')
+                setGameDirections('Cross wins')
                 setYourMove(null)
             } else if (oWins) {
-                console.log('o wins')
+                setGameDirections('Circle wins')
                 setYourMove(null)
             }
         });
@@ -86,18 +89,24 @@ function TicTacToe () {
         return () => clearInterval(timer);
     })
 
-
+    const reset = () => {
+        window.location.reload(true)
+    }
 
     return (
         <>
             <section className="tac_container">
                 <div className="tac_gameBoard">
-                    {currentPiece.map((move, index, color) => (
+                    {currentPiece.map((move, index) => (
                         <p key={index} alt="moveSlot" data-id={index} onClick={selectSpot} style={{color: 'red'}}>
                             {move}
                         </p>
                     ))}
                 </div>
+            </section>
+            <section className="score_section">
+               <p className="score">{gameDirections}</p>
+               <button className="reset_btn" onClick={reset}>Reset</button>
             </section>
         </>
     )
