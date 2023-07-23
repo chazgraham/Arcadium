@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./ticTacToe.css";
-import { parsePath } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 
 function TicTacToe () {
     const [currentPiece, setCurrentPiece] = useState([]);
@@ -54,7 +52,7 @@ function TicTacToe () {
             setTakenSpots(takenSpot)
         }
     }
-    console.log(takenSpots)
+
     useEffect(() => {
         const timer = setInterval(() => {
             botMove()
