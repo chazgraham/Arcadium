@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Arcadium/static/css/main.08f6690e.css",
-    "main.js": "/Arcadium/static/js/main.07357788.js",
+    "main.css": "/Arcadium/static/css/main.ce894ed4.css",
+    "main.js": "/Arcadium/static/js/main.6c95641c.js",
     "static/media/comingSoon.png": "/Arcadium/static/media/comingSoon.71930f6e84e5c4739833.png",
     "static/media/bodybackground.jpg": "/Arcadium/static/media/bodybackground.8be6a92bb9ddbff83c45.jpg",
     "static/media/candySmasher.png": "/Arcadium/static/media/candySmasher.6413757dcae161806379.png",
@@ -10,15 +10,17 @@
     "static/media/purple.png": "/Arcadium/static/media/purple.e396877d69a1af049b18.png",
     "static/media/red.png": "/Arcadium/static/media/red.9089fee176d59ea9f718.png",
     "static/media/green.png": "/Arcadium/static/media/green.913ee43a7094d588bdd7.png",
-    "static/media/blank.png": "/Arcadium/static/media/blank.5b92bbe13bf1d81f61a1.png",
+    "static/media/ticTacTumbnail.png": "/Arcadium/static/media/ticTacTumbnail.88579cb7bf15ee6b33c2.png",
+    "static/media/ticTacBoard.png": "/Arcadium/static/media/ticTacBoard.821d3ebe1406db61f8ed.png",
     "static/media/yellow.png": "/Arcadium/static/media/yellow.202c305e8fed14cf603e.png",
     "static/media/orange.png": "/Arcadium/static/media/orange.e66bce180512893fc473.png",
+    "static/media/blank.png": "/Arcadium/static/media/blank.e60d1e3d0d55a544f4cf.png",
     "index.html": "/Arcadium/index.html",
-    "main.08f6690e.css.map": "/Arcadium/static/css/main.08f6690e.css.map",
-    "main.07357788.js.map": "/Arcadium/static/js/main.07357788.js.map"
+    "main.ce894ed4.css.map": "/Arcadium/static/css/main.ce894ed4.css.map",
+    "main.6c95641c.js.map": "/Arcadium/static/js/main.6c95641c.js.map"
   },
   "entrypoints": [
-    "static/css/main.08f6690e.css",
-    "static/js/main.07357788.js"
+    "static/css/main.ce894ed4.css",
+    "static/js/main.6c95641c.js"
   ]
 }
