@@ -39,8 +39,8 @@ function TicTacToe () {
     }
 
     const botMove = () => {
-        if (takenSpots.length === 9) {
-            console.log('game over');
+        if (takenSpots.length === 9 && yourMove !== null) {
+            return setGameDirections('Draw Game');
         }
 
         if (yourMove !== true && yourMove !== null) {
@@ -79,7 +79,6 @@ function TicTacToe () {
                 setYourMove(null)
             }
         });
- 
     }
 
     useEffect(() => {
