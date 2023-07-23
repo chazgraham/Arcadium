@@ -11,7 +11,11 @@
     flex-wrap: wrap;
 }
 
-.tac_gameBoard img {
+.tac_gameBoard p {
     width: 171px;
     height: 171px;
+    margin: 0;
+    font-size: 100px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

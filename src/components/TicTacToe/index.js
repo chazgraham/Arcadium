@@ -12,7 +12,7 @@ function TicTacToe () {
         const createBoard = () => {
             const newBoard = [];
             for (var i = 0; i < width * width; i++) {
-                newBoard.push('white')
+                newBoard.push('')
             }
             setCurrentPiece(newBoard)
         }
@@ -24,7 +24,7 @@ function TicTacToe () {
         if (yourMove === true) {
             const spotBeingTaken =(e.target);
             const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"))
-            currentPiece[spotBeingTakenId] = 'black'
+            currentPiece[spotBeingTakenId] = 'X'
             setCurrentPiece([...currentPiece])
             takenSpot.push(spotBeingTakenId)
             setYourMove(false)
@@ -44,7 +44,7 @@ function TicTacToe () {
             const getRandomPeice = avalibleSpot[Math.floor(Math.random()*avalibleSpot.length)]
 
             for (var i = 0; i < 1; i++) {
-                currentPiece[getRandomPeice] = 'green'
+                currentPiece[getRandomPeice] = 'O'
                 setCurrentPiece([...currentPiece])
                 takenSpot.push(getRandomPeice)
                 setYourMove(true)
@@ -66,13 +66,12 @@ function TicTacToe () {
             <section className="tac_container">
                 <div className="tac_gameBoard">
                     {currentPiece.map((move, index) => (
-                        <img
+                        <p
                             key={index}
                             alt="moveSlot"
-                            style={{backgroundColor: move}}
                             data-id={index}
                             onClick={selectSpot}
-                        />
+                        >{move}</p>
                     ))}
                 </div>
             </section>
