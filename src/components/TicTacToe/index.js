@@ -24,15 +24,16 @@ function TicTacToe () {
         const spotBeingTaken =(e.target);
         const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"));
  
-        if (yourMove === true && !takenSpot.includes(spotBeingTakenId)) {
+        if (yourMove === true && !takenSpot.includes(spotBeingTakenId) && yourMove !== null) {
             e.target.style.color = 'blue'
             currentPiece[spotBeingTakenId] = 'X';
             takenSpot.push(spotBeingTakenId);
-            
+
             setCurrentPiece([...currentPiece]);
             setYourMove(false);
         }
         setTakenSpots(takenSpot);
+        checkWinner()
     }
 
     const botMove = () => {
@@ -40,7 +41,7 @@ function TicTacToe () {
             console.log('game over');
         }
 
-        if (yourMove !== true) {
+        if (yourMove !== true && yourMove !== null) {
             const takenSpot = [...takenSpots];
             const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8];
             const avalibleSpot = nums.filter((i) => !takenSpot.includes(i));
@@ -53,7 +54,29 @@ function TicTacToe () {
                 setYourMove(true);
             }
             setTakenSpots(takenSpot);
+            checkWinner()
         }
+    }
+
+    const checkWinner = () => {
+        const winningCombos = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], 
+            [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] 
+        ]
+
+        winningCombos.forEach(array => {
+            const xWins = array.every(move => currentPiece[move].includes('X'))
+            const oWins = array.every(move => currentPiece[move].includes('O'))
+
+            if (xWins) {
+                console.log('x wins')
+                setYourMove(null)
+            } else if (oWins) {
+                console.log('o wins')
+                setYourMove(null)
+            }
+        });
+ 
     }
 
     useEffect(() => {
@@ -62,6 +85,8 @@ function TicTacToe () {
         }, 1000);
         return () => clearInterval(timer);
     })
+
+
 
     return (
         <>
