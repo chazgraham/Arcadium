@@ -24,7 +24,8 @@
     align-items: center;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6; 
+    line-height: 1.6;
+    -webkit-text-stroke: 1px black;
 }
 
 .tac_score_section {

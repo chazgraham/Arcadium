@@ -26,7 +26,7 @@ function TicTacToe () {
         const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"));
  
         if (yourMove === true && !takenSpot.includes(spotBeingTakenId) && yourMove !== null) {
-            e.target.style.color = 'blue'
+            e.target.style.color = '#1409af'
             currentPiece[spotBeingTakenId] = 'X';
             takenSpot.push(spotBeingTakenId);
 
@@ -97,7 +97,7 @@ function TicTacToe () {
             <section className="tac_container">
                 <div className="tac_gameBoard">
                     {currentPiece.map((move, index) => (
-                        <p key={index} alt="moveSlot" data-id={index} onClick={selectSpot} style={{color: 'red'}}>
+                        <p key={index} alt="moveSlot" data-id={index} onClick={selectSpot} style={{color: '#861010'}}>
                             {move}
                         </p>
                     ))}
