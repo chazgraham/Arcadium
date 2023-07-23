@@ -17,7 +17,12 @@ function HomePage() {
                     </div>
                     <div className="thumdnail_card">
                         <Link to="/ticTacToe">
-                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/ticTacTumbnail.png`)} alt="candySmasher"/>
+                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/ticTacTumbnail.png`)} alt="ticTacToe"/>
+                        </Link>
+                    </div>
+                    <div className="thumdnail_card">
+                        <Link to="/">
+                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/comingSoon.png`)} alt="rockPaperScissors"/>
                         </Link>
                     </div>
                 </div>
