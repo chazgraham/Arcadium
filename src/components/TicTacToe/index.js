@@ -103,9 +103,9 @@ function TicTacToe () {
                     ))}
                 </div>
             </section>
-            <section className="score_section">
-               <p className="score">{gameDirections}</p>
-               <button className="reset_btn" onClick={reset}>Reset</button>
+            <section className="tac_score_section">
+               <p className="tac_score">{gameDirections}</p>
+               <button className="tac_reset_btn" onClick={reset}>Reset</button>
             </section>
         </>
     )
