@@ -9,6 +9,10 @@
     height: 513px;
     display: flex;
     flex-wrap: wrap;
+    background-image: url(../../assets/images/backroundImgs/ticTacBoard.png);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 15%;
 }
 
 .tac_gameBoard p {
@@ -16,6 +20,10 @@
     height: 171px;
     margin: 0;
     font-size: 100px;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6; 
 }
