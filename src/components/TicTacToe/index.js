@@ -21,14 +21,15 @@ function TicTacToe () {
 
     const selectSpot = (e) => {
         const takenSpot = [...takenSpots];
+        const spotBeingTaken =(e.target);
+        const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"));
  
-        if (yourMove === true) {
+        if (yourMove === true && !takenSpot.includes(spotBeingTakenId)) {
             e.target.style.color = 'blue'
-            const spotBeingTaken =(e.target);
-            const spotBeingTakenId = parseInt(spotBeingTaken.getAttribute("data-id"));
             currentPiece[spotBeingTakenId] = 'X';
-            setCurrentPiece([...currentPiece]);
             takenSpot.push(spotBeingTakenId);
+            
+            setCurrentPiece([...currentPiece]);
             setYourMove(false);
         }
         setTakenSpots(takenSpot);
