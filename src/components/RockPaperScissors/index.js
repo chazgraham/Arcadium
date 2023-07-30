@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 function RockPaperScissors() {
-    // Make bot and player functions
+    const [playerChoice, setPlayerChoice] = useState('')
+    console.log(playerChoice)
+
     return (
         <>
-            <h2>Rock Paper Scissors</h2>
+            <section>
+                <div>
+                    <img alt="player Choice" />
+                    <button onClick={ () => setPlayerChoice('rock')}>Rock</button>
+                    <button onClick={ ()=> setPlayerChoice('paper')}>Paper</button>
+                    <button onClick={ ()=> setPlayerChoice('scissors')}>Scissors</button>
+                </div>
+            </section>
         </>
     )
 }
