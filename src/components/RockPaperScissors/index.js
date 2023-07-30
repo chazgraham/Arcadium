@@ -5,12 +5,12 @@ import rock from '../../assets/images/rpsImgs/rock.png';
 import paper from '../../assets/images/rpsImgs/paper.png';
 import playerScissors from '../../assets/images/rpsImgs/playerScissors.png';
 import botScissors from '../../assets/images/rpsImgs/botScissors.png';
+import robotModal from '../../assets/images/rpsImgs/robotModal.png';
+import playerModal from '../../assets/images/rpsImgs/humanModal.png';
 
 function RockPaperScissors() {
-    const [playerChoice, setPlayerChoice] = useState('')
-    const [botChoice, setBotChoice] = useState('')
-    console.log(playerChoice)
-    console.log(botChoice)
+    const [playerChoice, setPlayerChoice] = useState(playerModal)
+    const [botChoice, setBotChoice] = useState(robotModal)
 
     const choices = [rock, paper, botScissors]
     const botChoices = () => {
