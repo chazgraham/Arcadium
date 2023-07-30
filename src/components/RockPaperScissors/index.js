@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './rockPaperScissors.css';
 
 function RockPaperScissors() {
     const [playerChoice, setPlayerChoice] = useState('')
@@ -8,18 +9,25 @@ function RockPaperScissors() {
 
     const choices = ['rock', 'paper', 'scissors']
     const botChoices = () => {
-        const getRandomChoice = choices[Math.floor(Math.random()*choices.length)];
+        const getRandomChoice = choices[Math.floor(Math.random() * choices.length)];
         setBotChoice(getRandomChoice)
     }
 
     return (
         <>
-            <section>
+            <section className="rps_container">
+                <div className="player_container">
+                    <div>
+                        <img className="rps_img" alt="player Choice" />
+                    </div>
+                    <div>
+                        <button onClick={() => { setPlayerChoice('rock'); botChoices() }}>Rock</button>
+                        <button onClick={() => { setPlayerChoice('paper'); botChoices() }}>Paper</button>
+                        <button onClick={() => { setPlayerChoice('scissors'); botChoices() }}>Scissors</button>
+                    </div>
+                </div>
                 <div>
-                    <img alt="player Choice" />
-                    <button onClick={ () => {setPlayerChoice('rock'); botChoices()}}>Rock</button>
-                    <button onClick={ ()=> {setPlayerChoice('paper'); botChoices()}}>Paper</button>
-                    <button onClick={ ()=> {setPlayerChoice('scissors'); botChoices()}}>Scissors</button>
+                    <img className="rps_img" alt="bot choice" />
                 </div>
             </section>
         </>
