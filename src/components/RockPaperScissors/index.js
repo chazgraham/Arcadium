@@ -41,21 +41,19 @@ function RockPaperScissors() {
             checkWinner()
             setPlayerChoice(playerModal)
             setBotChoice(robotModal)
-        }, 1000)
+        }, 900)
         return () => clearInterval(timer)
     })
 
     return (
         <>
             <section className="rps_container">
-                <div className="player_container">
-                    <p>Score: {playerScore}</p>
-                    <div>
+                <div className="contestant_container">
+                    <p className="rps_score">Score: {playerScore}</p>
                         <img className="rps_img" alt="player Choice" src={playerChoice} />
-                    </div>
                 </div>
-                <div>
-                    <p>Score: {botScore}</p>
+                <div className="contestant_container">
+                    <p className="rps_score">Score: {botScore}</p>
                     <img className="rps_img" alt="bot choice" src={botChoice} />
                 </div>
             </section>
