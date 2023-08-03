@@ -11,6 +11,8 @@ import playerModal from '../../assets/images/rpsImgs/humanModal.png';
 function RockPaperScissors() {
     const [playerChoice, setPlayerChoice] = useState(playerModal)
     const [botChoice, setBotChoice] = useState(robotModal)
+    const [playerScore, setPlayerScore] = useState(0)
+    const [botScore, setBotScore] = useState(0)
 
     const choices = [rock, paper, botScissors]
     const botChoices = () => {
@@ -20,7 +22,17 @@ function RockPaperScissors() {
 
     const checkWinner = () => {
         if (playerChoice === rock && botChoice === paper) {
-            console.log('bot wins')
+            setBotScore((score) => score + 1)
+        } else if (playerChoice === paper && botChoice === botScissors) {
+            setBotScore((score) => score + 1)
+        } else if (playerChoice === playerScissors && botChoice === rock) {
+            setBotScore((score) => score + 1)
+        } else if (botChoice === rock && playerChoice === paper) {
+            setPlayerScore((score) => score + 1)
+        } else if (botChoice === paper && playerChoice === playerScissors) {
+            setPlayerScore((score) => score + 1)
+        } else if (botChoice === botScissors && playerChoice === rock) {
+            setPlayerScore((score) => score + 1)
         }
     }
 
@@ -37,11 +49,13 @@ function RockPaperScissors() {
         <>
             <section className="rps_container">
                 <div className="player_container">
+                    <p>Score: {playerScore}</p>
                     <div>
                         <img className="rps_img" alt="player Choice" src={playerChoice} />
                     </div>
                 </div>
                 <div>
+                    <p>Score: {botScore}</p>
                     <img className="rps_img" alt="bot choice" src={botChoice} />
                 </div>
             </section>
