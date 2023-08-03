@@ -1,26 +1,31 @@
 {
   "files": {
-    "main.css": "/Arcadium/static/css/main.ce894ed4.css",
-    "main.js": "/Arcadium/static/js/main.6c95641c.js",
-    "static/media/comingSoon.png": "/Arcadium/static/media/comingSoon.71930f6e84e5c4739833.png",
+    "main.css": "/Arcadium/static/css/main.4101a154.css",
+    "main.js": "/Arcadium/static/js/main.209d09ea.js",
     "static/media/bodybackground.jpg": "/Arcadium/static/media/bodybackground.8be6a92bb9ddbff83c45.jpg",
+    "static/media/paper.png": "/Arcadium/static/media/paper.08f4b5fa02cba7fabb97.png",
     "static/media/candySmasher.png": "/Arcadium/static/media/candySmasher.6413757dcae161806379.png",
     "static/media/headerBackground.jpg": "/Arcadium/static/media/headerBackground.93075118022b5b17b878.jpg",
     "static/media/blue.png": "/Arcadium/static/media/blue.a83ecb789626082f6e57.png",
     "static/media/purple.png": "/Arcadium/static/media/purple.e396877d69a1af049b18.png",
     "static/media/red.png": "/Arcadium/static/media/red.9089fee176d59ea9f718.png",
     "static/media/green.png": "/Arcadium/static/media/green.913ee43a7094d588bdd7.png",
+    "static/media/rock.png": "/Arcadium/static/media/rock.a49e1f1b6e169a65179e.png",
+    "static/media/botScissors.png": "/Arcadium/static/media/botScissors.2d892e51931e6ad661de.png",
     "static/media/ticTacTumbnail.png": "/Arcadium/static/media/ticTacTumbnail.88579cb7bf15ee6b33c2.png",
+    "static/media/rps_thumbnail.png": "/Arcadium/static/media/rps_thumbnail.78b0d349942d8f61c534.png",
+    "static/media/playerScissors.png": "/Arcadium/static/media/playerScissors.c1af09c32dfbdc7de702.png",
     "static/media/ticTacBoard.png": "/Arcadium/static/media/ticTacBoard.821d3ebe1406db61f8ed.png",
     "static/media/yellow.png": "/Arcadium/static/media/yellow.202c305e8fed14cf603e.png",
     "static/media/orange.png": "/Arcadium/static/media/orange.e66bce180512893fc473.png",
     "static/media/blank.png": "/Arcadium/static/media/blank.e60d1e3d0d55a544f4cf.png",
+    "static/media/humanModal.png": "/Arcadium/static/media/humanModal.4cf481d570204e965adb.png",
     "index.html": "/Arcadium/index.html",
-    "main.ce894ed4.css.map": "/Arcadium/static/css/main.ce894ed4.css.map",
-    "main.6c95641c.js.map": "/Arcadium/static/js/main.6c95641c.js.map"
+    "main.4101a154.css.map": "/Arcadium/static/css/main.4101a154.css.map",
+    "main.209d09ea.js.map": "/Arcadium/static/js/main.209d09ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce894ed4.css",
-    "static/js/main.6c95641c.js"
+    "static/css/main.4101a154.css",
+    "static/js/main.209d09ea.js"
   ]
 }
