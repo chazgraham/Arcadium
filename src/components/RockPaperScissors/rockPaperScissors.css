@@ -9,3 +9,24 @@
     width: 300px;
     height: 250px;
 }
+
+.player_btns {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.player_btn {
+    padding: 20px 40px 20px 40px;
+    margin: 10px;
+    border-radius: 15px 15px 15px 15px;
+    background: linear-gradient(to bottom,  #404177 15%,#531a54 30%, #ac4ab6 51%,#d8d7e9 100%);
+    text-shadow: 0px 5px 10px #d8d7e9;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #bb00ff;
+}
+
+.player_btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #d8d7e9;
+}

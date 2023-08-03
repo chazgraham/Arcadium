@@ -25,14 +25,16 @@ function RockPaperScissors() {
                     <div>
                         <img className="rps_img" alt="player Choice" src={playerChoice} />
                     </div>
-                    <div>
-                        <button onClick={() => { setPlayerChoice(rock); botChoices() }}>Rock</button>
-                        <button onClick={() => { setPlayerChoice(paper); botChoices() }}>Paper</button>
-                        <button onClick={() => { setPlayerChoice(playerScissors); botChoices() }}>Scissors</button>
-                    </div>
                 </div>
                 <div>
                     <img className="rps_img" alt="bot choice" src={botChoice} />
+                </div>
+            </section>
+            <section className="player_btns">
+                <div>
+                    <button className="player_btn" onClick={() => { setPlayerChoice(rock); botChoices() }}>Rock</button>
+                    <button className="player_btn" onClick={() => { setPlayerChoice(paper); botChoices() }}>Paper</button>
+                    <button className="player_btn" onClick={() => { setPlayerChoice(playerScissors); botChoices() }}>Scissors</button>
                 </div>
             </section>
         </>
