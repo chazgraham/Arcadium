@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './rockPaperScissors.css';
 
 import rock from '../../assets/images/rpsImgs/rock.png';
@@ -17,6 +17,21 @@ function RockPaperScissors() {
         const getRandomChoice = choices[Math.floor(Math.random() * choices.length)];
         setBotChoice(getRandomChoice)
     }
+
+    const checkWinner = () => {
+        if (playerChoice === rock && botChoice === paper) {
+            console.log('bot wins')
+        }
+    }
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            checkWinner()
+            setPlayerChoice(playerModal)
+            setBotChoice(robotModal)
+        }, 1000)
+        return () => clearInterval(timer)
+    })
 
     return (
         <>
