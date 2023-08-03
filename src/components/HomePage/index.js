@@ -22,7 +22,7 @@ function HomePage() {
                     </div>
                     <div className="thumdnail_card">
                         <Link to="/rockPaperScissors">
-                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/comingSoon.png`)} alt="rockPaperScissors"/>
+                            <img className="img_thumbnail" src={require(`../../assets/images/gameThumbnails/rps_thumbnail.png`)} alt="rockPaperScissors"/>
                         </Link>
                     </div>
                 </div>
