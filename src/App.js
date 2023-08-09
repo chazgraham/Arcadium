@@ -6,6 +6,7 @@ import CandySmasher from "../src/components/CandySmasher";
 import Header from "../src/components/Header";
 import TicTacToe from "./components/TicTacToe";
 import RockPaperScissors from "./components/RockPaperScissors";
+import MineSweeper from "./components/MineSweeper";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           <Route
             path="/rockPaperScissors"
             element={<RockPaperScissors />}
+          />
+          <Route
+            path="/mineSweeper"
+            element={<MineSweeper />}
           />
         </Routes>
       </Router>
