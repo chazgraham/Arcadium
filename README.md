@@ -3,6 +3,7 @@
 ## Descripton
 An application that allows the user to choose a game that is posted on the homepage and allow them to play the game and view their score. All logic coded in JavaScript. 
 http://chazgraham.github.io/Arcadium
+![](./src/assets/images/backroundImgs/readme1.jpg)
 ![](./src/assets/images/backroundImgs/ReadMe.jpg)
 
 ## Table of Contents
