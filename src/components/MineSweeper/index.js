@@ -1,6 +1,7 @@
 import React from "react";
 
 function MineSweeper() {
+    //TODO: create gameboard
     return (
         <>
             <section>
